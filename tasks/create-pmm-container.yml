@@ -1,12 +1,12 @@
 ---
 - name: Creating PMM Data Container
-  docker:
+  docker_container:
     name: pmm-data
     image: "{{ pmm_server_image_repo }}/{{ pmm_server_image_name }}:{{ pmm_server_version }}"
     state: present
     volumes:
-    - /opt/prometheus/data
-    - /opt/consul-data
-    - /var/lib/mysql
-    - /var/lib/grafana
+      - /opt/prometheus/data
+      - /opt/consul-data
+      - /var/lib/mysql
+      - /var/lib/grafana
     command: /bin/true
