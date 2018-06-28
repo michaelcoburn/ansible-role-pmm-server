@@ -3,7 +3,7 @@
   docker:
     name: pmm-server
     insecure_registry: true
-    image: "percona/pmm-server:{{ pmm_server_version }}"
+    image: "{{ pmm_server_image_repo }}/{{pmm_server_image_name }}:{{ pmm_server_version }}"
     state: started
     volumes_from:
     - pmm-data

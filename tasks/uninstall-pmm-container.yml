@@ -2,7 +2,7 @@
 - name: Uninstalling PMM Data Container
   docker:
     name: pmm-server
-    image: "percona/pmm-server:{{ pmm_server_version }}"
+    image: "{{ pmm_server_image_repo }}/{{ pmm_server_image_name }}:{{ pmm_server_version }}"
     state: absent
     volumes:
     - /opt/prometheus/data

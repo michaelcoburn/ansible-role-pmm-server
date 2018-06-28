@@ -1,6 +1,6 @@
 ---
 # PMM server docker image version to be installed
-pmm_server_version: 1.0.7
+pmm_server_version: latest
 
 # Enabling Password Protection ( true or false ). Note: If Enabled, username and password details should be provided.
 # If undefined, it is set to true by default

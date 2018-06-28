@@ -36,7 +36,7 @@ You can protect PMM from unauthorized access using the following security featur
 
 Available variables are listed below, along with default values (see defaults/main.yml):
 
-    pmm_server_version: 1.12.0
+    pmm_server_version: latest
 
 This defines the version of pmm-server that will installed. Percona recommends using the latest stable version. 
 
@@ -122,7 +122,7 @@ Set this to true if you want to uninstall pmm-server. Other variable options wil
       become: yes
     
       vars:
-        pmm_server_version: 1.12.0
+        pmm_server_version: latest
         pmm_server_certificate_path: "~/pmm-certs/"
       
       roles:
@@ -137,7 +137,7 @@ MIT / BSD
 
 
 ----------
-**Author**
+**Authors**
 
 This role was created by [Chris Sam](https://linkedin.com/in/chris-sam) for [devopsideas](http://devopsideas.com), and contributed to by [Michael Coburn](https://www.linkedin.com/in/michaelacoburn)
 

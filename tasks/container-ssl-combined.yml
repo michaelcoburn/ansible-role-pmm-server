@@ -27,7 +27,7 @@
 - name: Running PMM Data Container with SSL Encryption
   docker:
     name: pmm-server
-    image: "percona/pmm-server:{{ pmm_server_version }}"
+    image: "{{ pmm_server_image_repo }}/{{ pmm_server_image_name }}:{{ pmm_server_version }}"
     state: started
     volumes:
     - /etc/pmm-certs:/etc/nginx/ssl
@@ -52,7 +52,7 @@
 - name: Running PMM Data Container with both SSL Encryption and pmm_server_password protection
   docker:
     name: pmm-server
-    image: "percona/pmm-server:{{ pmm_server_version }}"
+    image: "{{ pmm_server_image_repo }}/{{ pmm_server_image_name }}:{{ pmm_server_version }}"
     state: started
     volumes:
     - /etc/pmm-certs:/etc/nginx/ssl
