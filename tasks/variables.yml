@@ -1,9 +1,19 @@
 ---
 # Variable Configuration
-- name: Define PMM Server version if not defined
+- name: Define PMM Server Docker image version if not defined
   set_fact:
     pmm_server_version: "{{ __pmm_server_version }}"
   when: pmm_server_version is not defined
+
+- name: Define PMM Server Docker image repository if not defined
+  set_fact:
+    pmm_server_image_repo: "{{ __pmm_server_image_repo }}"
+  when: pmm_server_image_repo is not defined
+
+- name: Define PMM Server Docker image name if not defined
+  set_fact:
+    pmm_server_image_name: "{{ __pmm_server_image_name }}"
+  when: pmm_server_image_name is not defined
 
 - name: Define pmm_server_ENABLE_PROTECTION
   set_fact:
