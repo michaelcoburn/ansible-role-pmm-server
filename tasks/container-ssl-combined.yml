@@ -66,7 +66,7 @@
     - "{{ pmm_server_https_port }}:443"
     restart_policy: always
   when:
-    - "{{ pmm_server_ENABLE_PROTECTION }} == true"
-    - "{{ pmm_server_ENABLE_SSL }} == true"
+    - "pmm_server_ENABLE_PROTECTION == true"
+    - "pmm_server_ENABLE_SSL == true"
     - cert_file.stat.exists == True
     - key_file.stat.exists == True
