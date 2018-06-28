@@ -14,7 +14,7 @@ Docker should be installed in the server prior to running this role. Make use of
 
     - hosts: pmm-server
       roles:
-        - role: chrissam.pmm-server
+        - role: michaelcoburn.pmm-server
           become: yes
 
 ----------
@@ -36,16 +36,16 @@ You can protect PMM from unauthorized access using the following security featur
 
 Available variables are listed below, along with default values (see defaults/main.yml):
 
-    pmm_server_version: 1.0.7
+    pmm_server_version: 1.12.0
 
-This defines the version of pmm-server that will installed. Percona recommends to use the latest stable version. 
+This defines the version of pmm-server that will installed. Percona recommends using the latest stable version. 
 
 
 ----------
 
 
     pmm_server_ENABLE_PROTECTION: true
-This defines whether to enable password protection or not. This protects PMM from unauthorized access.
+This defines whether to enable password protection or not using http basic authentication via nginx. This protects PMM from unauthorized access.
 
 
 ----------
@@ -53,7 +53,7 @@ This defines whether to enable password protection or not. This protects PMM fro
 
     pmm_server_username: admin
     pmm_server_password: admin
-If ENABLE_PROTECTION is set to true then these variables defines the username and password that will be used.
+If pmm_server_ENABLE_PROTECTION is set to true then these variables define the username and password that will be used.
 
 
 ----------
@@ -65,7 +65,7 @@ Enables encryption in  traffic between PMM Client and PMM Server using SSL certi
 ----------
 
     pmm_server_default_cert: false
-If ENABLE_SSL is set to true, then this defines whether a default self-signed certificate should be used.
+If pmm_server_ENABLE_SSL is set to true, then this defines whether a default self-signed certificate should be used.
 
 
 ----------
@@ -122,11 +122,11 @@ Set this to true if you want to uninstall pmm-server. Other variable options wil
       become: yes
     
       vars:
-        pmm_server_version: 1.0.7
+        pmm_server_version: 1.12.0
         pmm_server_certificate_path: "~/pmm-certs/"
       
       roles:
-        - chrissam.pmm-server
+        - michaelcoburn.pmm-server
 
 ----------
 
@@ -139,7 +139,7 @@ MIT / BSD
 ----------
 **Author**
 
-This role was created by [Chris Sam](https://linkedin.com/in/chris-sam) for [devopsideas](http://devopsideas.com)
+This role was created by [Chris Sam](https://linkedin.com/in/chris-sam) for [devopsideas](http://devopsideas.com), and contributed to by [Michael Coburn](https://www.linkedin.com/in/michaelacoburn)
 
 
 
